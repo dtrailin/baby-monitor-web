@@ -5,6 +5,7 @@ var isMobile = false,
 var playerMapping = {};
 var currentSockId;
 io.on('connect', function(socket) {
+  console.log("connected");
   socket.on('cry', function(input) {
     io.emit('cry', {speed: input});
       console.log("crying because..."+input);
