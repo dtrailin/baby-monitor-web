@@ -1,20 +1,8 @@
 // Load requirements
-var http = require('http'),
-io = require('socket.io');
-
-// Create server & socket
-var server = http.createServer(function(req, res)
-{
-  // Send HTML headers and message
-  res.writeHead(404, {'Content-Type': 'text/html'});
-  res.end('<h1>Aw, snap! 404</h1>');
-});
-server.listen(80);
-io = io.listen(server);
+var io = require('socket.io')();
 
 // Add a connect listener
-io.sockets.on('connection', function(socket)
-{
+io.on('connect', function(socket) {
   console.log('Client connected.');
 
   // Disconnect listener
@@ -24,6 +12,8 @@ io.sockets.on('connection', function(socket)
   });
 
   socket.on('disconnect', function() {
-  console.log('Client disconnected.');
+    console.log('Client disconnected.');
   });
 });
+
+io.listen(7777);
