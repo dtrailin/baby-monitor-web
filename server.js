@@ -4,6 +4,7 @@ var isMobile = false,
     isClient = true;
 var playerMapping = {};
 var currentSockId;
+console.log("test");
 io.on('connect', function(socket) {
   console.log("connected");
   socket.on('cry', function(input) {
