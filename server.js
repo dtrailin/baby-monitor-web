@@ -1,6 +1,13 @@
-var http = require('http')
-var port = process.env.PORT || 1337;
-http.createServer(function(req, res) {
-  res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.end('Hello World\n');
-}).listen(port);
+var io = require('socket.io')();
+
+var isMobile = false,
+    isClient = true;
+var playerMapping = {};
+var currentSockId;
+
+  socket.on('cry', function(input) {
+    io.emit('cry', {speed: input});
+      console.log("crying because..."+input);
+    });
+
+io.listen(7777);

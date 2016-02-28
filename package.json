@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/dtrailin/baby-monitor-web/issues"
   },
-  "homepage": "https://github.com/dtrailin/baby-monitor-web#readme"
+  "homepage": "https://github.com/dtrailin/baby-monitor-web#readme",
+  "dependencies": {
+    "socket.io": "^1.4.5"
+  }
 }
